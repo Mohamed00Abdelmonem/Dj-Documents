@@ -16,3 +16,8 @@ def Document_List(request, id):
     return render(request, 'doc/category_detail.html', {'category':data , 'documents':documents})
 
 
+class Document_Detail(DetailView):
+    model = Document
+    template_name = 'doc/document_detail.html'
+   
+

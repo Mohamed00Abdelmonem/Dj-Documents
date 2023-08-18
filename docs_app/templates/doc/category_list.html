@@ -28,6 +28,17 @@
         <!-- Getting Started
     ============================ -->
         <section id="idocs_start">
+
+          <!-- Test Code -->
+         
+          {% for category in category_list %}
+             <li class="nav-item"><a class="nav-link active" href="/category/{{category.id}}">{{category.name}} </a></li>
+          {% endfor %}
+          
+          <!-- End Test Code  -->
+
+  
+
         <h1>Documentation</h1>
         <h2>Your ThemeForest Item Name Here</h2>
         <p class="lead">Thank you so much for purchasing our item from themeforest.</p>

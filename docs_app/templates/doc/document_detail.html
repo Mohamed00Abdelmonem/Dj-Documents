@@ -13,11 +13,9 @@
        
 
 
-        <li class="nav-item"><a class="nav-link active" href="#idocs_start">{{category.name}} </a>
+        <li class="nav-item"><a class="nav-link active" href="#idocs_start">Decuments </a>
           <ul class="nav flex-column">
-            {% for document in documents %}
-            <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
-            {% endfor %}
+            <li class="nav-item"><a class="nav-link" href="/">{{object.title}}</a></li>
         </ul>
         </li>
 
@@ -34,33 +32,18 @@
         <!-- Getting Started
     ============================ -->
         <section id="idocs_start">
-
-
-
-            <!-- Test code  -->
-
-          {% for document in documents %}
-          <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
-          {% endfor %}
-
-           <!-- End Test  Code -->
-
-
-
-        <h1>{{category.name}}</h1>
-        <h2>{{category.intro}}</h2>
-        <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+        <h1>{{object.title|safe}}</h1>
 		<hr>
 		<div class="row">
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
 					<!-- <li><strong>Version:</strong> 1.0</li> -->
-					<li><strong>Author:</strong> <a href="http://www.harnishdesign.net" target="_blank">{{category.author}}</a></li>
+					<li><strong>Author:</strong> <a href="http://www.harnishdesign.net" target="_blank">{{object.author|safe}}</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
-					<li><strong class="font-weight-700">Created:</strong> {{category.created_at}}</li>
+					<li><strong class="font-weight-700">Created:</strong> {{object.created_at|safe}}</li>
 					<li><strong>Update:</strong> 12 May, 2020</li>
 				</ul>
 			</div>
@@ -70,9 +53,9 @@
         </section>
         
 
-        <h4>Intro For Topic {{category.name}}</h2>
+        <h4>Intro For Topic {{object.title|safe}}</h2>
 
-					<p>{{category.intro}}..</h3>
+					<p>{{object.content|safe}}..</h3>
 				
 
 
