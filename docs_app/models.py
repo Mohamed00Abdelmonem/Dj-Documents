@@ -24,5 +24,5 @@ class Document(models.Model):
     created_at = models.DateTimeField(_('Created AT'),default= timezone.now)
     
     def __str__(self):
-        return self.title - self.category
+        return f"{self.title} - {self.category}"
  
