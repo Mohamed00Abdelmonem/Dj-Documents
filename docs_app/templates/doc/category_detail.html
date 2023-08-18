@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+  
+	<!-- Sidebar Navigation
+	============================ -->
+
+
+	<div class="idocs-navigation bg-light">
+    <ul class="nav flex-column ">
+
+       
+
+
+        <li class="nav-item"><a class="nav-link active" href="#idocs_start">{{category.name}} </a>
+          <ul class="nav flex-column">
+            {% for document in documents %}
+            <li class="nav-item"><a class="nav-link" href="/">{{document.title}}</a></li>
+            {% endfor %}
+        </ul>
+        </li>
+
+        
+
+  </div>
+
+
+ <!-- Docs Content
+    ============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Getting Started
+    ============================ -->
+        <section id="idocs_start">
+        <h1>{{category.name}}</h1>
+        <h2>{{category.intro}}</h2>
+        <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<!-- <li><strong>Version:</strong> 1.0</li> -->
+					<li><strong>Author:</strong> <a href="http://www.harnishdesign.net" target="_blank">{{category.author}}</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong class="font-weight-700">Created:</strong> {{category.created_at}}</li>
+					<li><strong>Update:</strong> 12 May, 2020</li>
+				</ul>
+			</div>
+		</div>
+        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="https://mail.google.com/mmohamedabdelm@gmail.com">My Email</a>.</p>
+            
+        </section>
+        
+
+        <h4>Intro For Topic {{category.name}}</h2>
+
+					<p>{{category.intro}}..</h3>
+				
+
+
+      </div>
+    </div>
+	
+  </div>
+  <!-- Content end --> 
+  
+  {% endblock body%}

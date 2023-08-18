@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+  
+	<!-- Sidebar Navigation
+	============================ -->
+
+
+	<div class="idocs-navigation bg-light">
+    <ul class="nav flex-column ">
+
+      {% for category in category_list %}
+
+        <li class="nav-item"><a class="nav-link active" href="/category/{{category.id}}">{{category.name}} </a></li>
+      
+      {% endfor %}
+    </ul>
+
+  </div>
+
+
+ <!-- Docs Content
+    ============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Getting Started
+    ============================ -->
+        <section id="idocs_start">
+        <h1>Documentation</h1>
+        <h2>Your ThemeForest Item Name Here</h2>
+        <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong>Version:</strong> 1.0</li>
+					<li><strong>Author:</strong> <a href="http://www.harnishdesign.net" target="_blank">Mohamed Abdelmoenm</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong class="font-weight-700">Created:</strong> 18 August, 2023</li>
+					<li><strong>Update:</strong> 12 May, 2020</li>
+				</ul>
+			</div>
+		</div>
+        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Item Support Page</a>.</p>
+        </section>
+        
+
+        <h4>About For Me</h2>
+
+					<p>Hello Everybody An Opportunity for Testing My Skills! 
+              A Django project that reflects and enhances my proficiency. <br>
+              The project's aim? Simply put, building a "Documents" platform to record my learning journey.  <br>
+              This project will assist me in staying on track with what I'm learning and documenting every concept. But that's not all, 
+              this resource will be available for anyone interested in learning the same topic in the future.  
+
+              The website will primarily focus on <strong>Python and Django </strong> , making it particularly valuable for enthusiasts and learners of these two languages..</h3>
+				
+
+
+      </div>
+    </div>
+	
+  </div>
+  <!-- Content end --> 
+  
+  {% endblock body%}
