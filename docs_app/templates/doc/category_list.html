@@ -30,13 +30,25 @@
         <section id="idocs_start">
 
           <!-- Test Code -->
-         
           {% for category in category_list %}
-             <li class="nav-item"><a class="nav-link active" href="/category/{{category.id}}">{{category.name}} </a></li>
-          {% endfor %}
-          
+          <li class="nav-item">
+            <a class="nav-link active" href="/category/{{category.id}}">
+              {{category.name}}
+            </a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_category' category.id %}">
+              Edit
+            </button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="{% url 'delete_category' category.id %}">
+              Delete
+            </button>
+          </li>
+        {% endfor %}
+        
+        <br>
+        <br>
           <!-- End Test Code  -->
 
+          
   
 
         <h1>Documentation</h1>

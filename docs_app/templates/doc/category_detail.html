@@ -41,14 +41,22 @@
 
           {% for document in documents %}
           <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
+        </a>
+        <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_document' document.id %}">
+          Edit
+        </button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="{% url 'delete_document' document.id %}">
+          Delete
+        </button>
+      </li>
           {% endfor %}
 
            <!-- End Test  Code -->
 
 
 
-        <h1>{{category.name}}</h1>
-        <h2>{{category.intro}}</h2>
+        <h1>{{category.name|safe}}</h1>
+        <!-- <h2>{{category.intro|safe}}</h2> -->
         <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
 		<hr>
 		<div class="row">
@@ -70,9 +78,9 @@
         </section>
         
 
-        <h4>Intro For Topic {{category.name}}</h2>
+        <h4>Intro For Topic {{category.name|safe}}</h2>
 
-					<p>{{category.intro}}..</h3>
+					<p>{{category.intro|safe}}..</h3>
 				
 
 

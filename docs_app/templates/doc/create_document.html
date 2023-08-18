@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <h2>Create Document</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <!-- Other form fields here -->
+        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}
