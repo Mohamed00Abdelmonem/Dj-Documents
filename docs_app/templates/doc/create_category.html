@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-
+{% load bootstrap %}
 {% block body %}
 <div class="container">
     <h2>Create Category</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.media }}
-        {{ form.as_p }}
+        <!-- {{ form.as_p }} -->
+        {{ form|bootstrap_horizontal }}
+
         <!-- Other form fields here -->
         <button class="btn waves-effect waves-light" type="submit">Submit</button>
     </form>
 </div>
 {% endblock body %}
+
