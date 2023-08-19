@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-
+{% load bootstrap %}
 {% block body %}
 <div class="container">
     <h2>Create Document</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.media }}
-        {{ form.as_p }}
-        <!-- Other form fields here -->
-        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+        {{ form|bootstrap_horizontal }}
+
+        <button class="btn btn-success" type="submit">Create</button>
     </form>
+
 </div>
+<br>
+<br>
 {% endblock body %}
