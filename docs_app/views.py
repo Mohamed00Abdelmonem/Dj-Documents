@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Category, Document
+from .forms import Document_Form
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # Create your views here.
 
@@ -37,11 +38,23 @@ class Create_Category(CreateView):
     success_url = '/'
 
 
-class Create_Document(CreateView):
-    model = Document
-    template_name = 'doc/create_document.html'
-    fields = '__all__'
-    success_url = '/'    
+
+def Create_Document(request, id):
+    data = Category.objects.get(id=id)
+    if request.method == 'POST':
+        form = Document_Form(request.POST)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.author = request.user
+            myform.category = data  # Assign the section to the subject
+            myform.save()
+            return redirect('/')
+    else:
+        form = Document_Form()
+
+    return render (request,'doc/create_document.html', {'form': form} )
+
+
 
 
 class Update_Category(UpdateView):
