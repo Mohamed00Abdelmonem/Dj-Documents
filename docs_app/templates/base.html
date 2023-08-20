@@ -12,6 +12,14 @@
 <meta name="description" content="Your ThemeForest item Name and description">
 <meta name="author" content="harnishdesign.net">
 
+<style>
+  .btn:hover {
+    background-color: #2bb7c3;
+}
+a {
+        text-decoration: none; /* This removes the underline */
+    }
+</style>
 <!-- Stylesheet
 ============================== -->
 <!-- Bootstrap -->
@@ -78,7 +86,7 @@
               </ul>
             </li>
             <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/portfolio?ref=HarnishDesign">Other Template</a></li>
-            <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Support</a></li>
+            <li><a target="_blank" href="{% url 'dashboard' %}">Dashboard</a></li>
           </ul>
         </div>
         <ul class="social-icons social-icons-sm ml-lg-2 mr-2">

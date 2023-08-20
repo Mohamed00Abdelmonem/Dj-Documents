@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Category, Document
-from .forms import Document_Form
+from .forms import Document_Form, Category_Form
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # Create your views here.
 
@@ -30,12 +30,24 @@ class Document_Detail(DetailView):
 
 
 
+def Create_Category(request):
+    if request.method == 'POST':
+        form = Category_Form(request.POST)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.author = request.user
+            myform.save()
+            return redirect('/')
+    else:
+        form = Category_Form()
 
-class Create_Category(CreateView):
-    model = Category
-    template_name = 'doc/create_category.html'
-    fields = '__all__'
-    success_url = '/'
+    return render (request,'doc/create_document.html', {'form': form} )
+
+# class Create_Category(CreateView):
+#     model = Category
+#     template_name = 'doc/create_category.html'
+#     fields = '__all__'
+#     success_url = '/'
 
 
 

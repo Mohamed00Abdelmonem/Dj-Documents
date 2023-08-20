@@ -28,22 +28,22 @@
         <!-- Getting Started
     ============================ -->
         <section id="idocs_start">
-
+        
           <!-- Test Code -->
+          <ul> 
           {% for category in category_list %}
           <li class="nav-item">
             <a class="nav-link active" href="/category/{{category.id}}">
               {{category.name}}
             </a>
-            <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_category' category.id %}">
-              Edit
-            </button>
-            <button class="btn btn-danger" data-toggle="modal" data-target="{% url 'delete_category' category.id %}">
-              Delete
-            </button>
+            <a class="btn waves-effect waves-light"  href="{% url 'update_category' category.id %}">  Edit  </a>
+            <a class="btn waves-effect waves-light"  href="{% url 'delete_category' category.id %}">  Delete  </a>
           </li>
         {% endfor %}
-        
+      </ul>
+
+  </div>
+
         <br>
         <br>
           <!-- End Test Code  -->
@@ -52,14 +52,14 @@
   
 
         <h1>Documentation</h1>
-        <h2>Your ThemeForest Item Name Here</h2>
-        <p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+        <!-- <h2>Your ThemeForest Item Name Here</h2>
+        <p class="lead">Thank you so much for purchasing our item from themeforest.</p> -->
 		<hr>
 		<div class="row">
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
 					<li><strong>Version:</strong> 1.0</li>
-					<li><strong>Author:</strong> <a href="http://www.harnishdesign.net" target="_blank">Mohamed Abdelmoenm</a></li>
+					<li><strong>Author:</strong> <a href="http://www.harnshdesign.net" target="_blank">Mohamed Abdelmoenm</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-6 col-lg-4">
@@ -69,7 +69,7 @@
 				</ul>
 			</div>
 		</div>
-        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Item Support Page</a>.</p>
+        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">My Email</a>.</p>
         </section>
         
 

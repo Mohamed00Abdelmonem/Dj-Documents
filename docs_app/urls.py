@@ -5,10 +5,10 @@ from .views import (Document_List,List_Category, Dashboard_List_Category, Docume
                     
 urlpatterns = [
     path('', List_Category.as_view(), name='list_category'),
-    path('dashboard/', Dashboard_List_Category.as_view(), name='list_category'),
+    path('dashboard/', Dashboard_List_Category.as_view(), name='dashboard'),
     path('category/<int:id>', Document_List, name='document_list'),
     path('category/<int:id>/document/<int:pk>', Document_Detail.as_view(), name='document_detail'),
-    path('create_category', Create_Category.as_view(), name='create_category'),
+    path('create_category', Create_Category, name='create_category'),
     path('create_document/<int:id>', Create_Document, name='create_document'),
     path('update_category/<int:pk>', Update_Category.as_view(), name='update_category'),
     path('update_document/<int:pk>', Update_Document.as_view(), name='update_document'),
