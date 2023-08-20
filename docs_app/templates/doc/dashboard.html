@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+<main>
+    <div class="container">
+        <div class="add-form">
+            <h2>Add Document</h2>
+            <form>
+                <input type="text" placeholder="Title" class="form-control">
+                <input type="text" placeholder="Author" class="form-control">
+                <textarea placeholder="Description" class="form-control"></textarea>
+                <button class="btn">Add Document</button>
+            </form>
+
+        </div>
+        <div class="document-list">
+            <h2>Document List</h2>
+            <table>
+                <tbody>
+                    {% for category in category_list %}
+
+
+                    <tr>
+                        <th>{{category.name}}</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+{% endblock body%}

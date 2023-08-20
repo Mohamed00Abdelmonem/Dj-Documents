@@ -8,6 +8,11 @@ class List_Category(ListView):
     template_name = 'doc/category_list.html'
 
 
+class Dashboard_List_Category(ListView):
+    model = Category
+    template_name = 'doc/dashboard.html'
+
+
 
 
 def Document_List(request, id):
@@ -64,3 +69,7 @@ class Delete_Document(DeleteView):
     model = Document
     success_url = '/'    
     template_name = 'delete_document.html'
+
+
+def dashboard(request):
+    return render(request, 'doc/dashboard.html')    
