@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .models import Category, Document
 from .forms import Document_Form, Category_Form
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 # Create your views here.
 
 class List_Category(ListView):
@@ -43,11 +43,6 @@ def Create_Category(request):
 
     return render (request,'doc/create_document.html', {'form': form} )
 
-# class Create_Category(CreateView):
-#     model = Category
-#     template_name = 'doc/create_category.html'
-#     fields = '__all__'
-#     success_url = '/'
 
 
 
