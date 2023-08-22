@@ -7,7 +7,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-
+media_root/document_videos
 
 db.sqlite3-journal
 
