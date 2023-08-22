@@ -2,7 +2,6 @@
 
 {% block body %}
 
-  
 	<!-- Sidebar Navigation
 	============================ -->
 
@@ -62,6 +61,32 @@
       </div>
     </div>
 	
+    {% if object.video %}
+    {% if object.video.url %}
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="embed-responsive embed-responsive-16by9 rounded">
+                        <video class="embed-responsive-item" controls>
+                            <source src="{{ object.video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>No video URL found.</p>
+    {% endif %}
+{% endif %}
+
+
+
+
+
+
+
+
   </div>
   <!-- Content end --> 
   

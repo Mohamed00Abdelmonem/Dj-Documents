@@ -16,6 +16,13 @@ class Dashboard_List_Category(ListView):
 
 
 
+def Dashboard_List_Document(request, id):
+    data = Category.objects.get(id=id)
+    docs = Document.objects.filter(category=data)
+    return render(request, 'doc/dashboard_docs.html', {'data':data, 'docs':docs})
+
+    
+
 def Document_List(request, id):
     data = Category.objects.get(id=id)
     documents = Document.objects.filter(category = data)
@@ -70,12 +77,21 @@ class Update_Category(UpdateView):
     template_name = 'doc/update_form.html'
     success_url = '/'    
 
+def Update_Document(request, id):
+    data = Document.objects.get(id=id)
+    if request.method == 'POST':
+        form = Document_Form(request.POST,  request.FILES, instance=data)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.author = request.user
+            # myform.category = data  # Assign the section to the subject
+            myform.save()
+            return redirect('/')
+    else:
+        form = Document_Form( instance=data)
 
-class Update_Document(UpdateView):
-    model = Document
-    fields = '__all__'    
-    template_name = 'doc/update_form.html'
-    success_url = '/'    
+    return render (request,'doc/update_form.html', {'form': form} )
+
 
 
 class Delete_Category(DeleteView):

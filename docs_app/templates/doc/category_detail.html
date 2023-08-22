@@ -42,12 +42,12 @@
           {% for document in documents %}
           <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
         </a>
-        <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_document' document.id %}">
+        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_document' document.id %}">
           Edit
         </button>
         <button class="btn btn-danger" data-toggle="modal" data-target="{% url 'delete_document' document.id %}">
           Delete
-        </button>
+        </button> -->
       </li>
           {% endfor %}
 

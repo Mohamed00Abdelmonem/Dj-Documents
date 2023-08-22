@@ -22,6 +22,7 @@ class Document(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='document_user' , verbose_name=_('Document'))
     title = models.CharField(_('Title'),max_length=100)
     content = RichTextField(_('Content'))
+    video = models.FileField(_('Video'), upload_to='document_videos/', blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='document_author', verbose_name=_('Author'))
     created_at = models.DateTimeField(_('Created AT'),default= timezone.now)
     
