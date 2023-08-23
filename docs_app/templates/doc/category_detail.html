@@ -6,21 +6,17 @@
 	<!-- Sidebar Navigation
 	============================ -->
 
+  <div class="new-sidebar">
+    <ul class="nav flex-column">
+      {% for document in documents %}
+      <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
+      {% endfor %}
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+    
 
-	<div class="idocs-navigation bg-light">
-    <ul class="nav flex-column ">
-
-       
-
-
-        <li class="nav-item"><a class="nav-link active" href="#idocs_start">{{category.name}} </a>
-          <ul class="nav flex-column">
-            {% for document in documents %}
-            <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
-            {% endfor %}
-        </ul>
-        </li>
-
+	
         
 
   </div>

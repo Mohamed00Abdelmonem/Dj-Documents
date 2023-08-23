@@ -2,22 +2,22 @@
 
 {% block body %}
 
+
+
+
+<!-- New Sidebar Navigation
+============================ -->
+<div class="new-sidebar">
+  <ul class="nav flex-column">
+    {% for category in category_list %}
+    <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}">{{category.name}}</a></li>
+
+    {% endfor %}
+    <!-- Add more links as needed -->
+  </ul>
+</div>
   
-	<!-- Sidebar Navigation
-	============================ -->
 
-
-	<div class="idocs-navigation bg-light">
-    <ul class="nav flex-column ">
-
-      {% for category in category_list %}
-
-        <li class="nav-item"><a class="nav-link active" href="/category/{{category.id}}">{{category.name}} </a></li>
-      
-      {% endfor %}
-    </ul>
-
-  </div>
 
 
  <!-- Docs Content
