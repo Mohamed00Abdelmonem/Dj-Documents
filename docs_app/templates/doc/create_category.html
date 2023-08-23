@@ -3,11 +3,11 @@
 {% block body %}
 <div class="container">
     <h2>Create Category</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.media }}
         {{ form|bootstrap_horizontal }}
-
+    
         <button class="btn waves-effect waves-light" type="submit">Create</button>
     </form>
 

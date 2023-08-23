@@ -56,7 +56,7 @@ def Create_Category(request):
 def Create_Document(request, id):
     data = Category.objects.get(id=id)
     if request.method == 'POST':
-        form = Document_Form(request.POST)
+        form = Document_Form(request.POST,  request.FILES)
         if form.is_valid():
             myform = form.save(commit=False)
             myform.author = request.user
@@ -76,6 +76,8 @@ class Update_Category(UpdateView):
     fields = '__all__'    
     template_name = 'doc/update_form.html'
     success_url = '/'    
+
+
 
 def Update_Document(request, id):
     data = Document.objects.get(id=id)
