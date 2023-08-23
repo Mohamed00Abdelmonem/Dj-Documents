@@ -2,6 +2,8 @@
 
 {% block body %}
 
+
+
   
 	<!-- Sidebar Navigation
 	============================ -->
@@ -31,26 +33,14 @@
     ============================ -->
         <section id="idocs_start">
 
-
-
-            <!-- Test code  -->
-
-          {% for document in documents %}
-          <li class="nav-item"><a class="nav-link" href="/category/{{category.id}}/document/{{document.id}}">{{document.title}}</a></li>
-        </a>
-        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="{% url 'update_document' document.id %}">
-          Edit
-        </button>
-        <button class="btn btn-danger" data-toggle="modal" data-target="{% url 'delete_document' document.id %}">
-          Delete
-        </button> -->
-      </li>
-          {% endfor %}
-
-           <!-- End Test  Code -->
-
-
-
+            <!--Breadcrumb
+            ============================ -->
+            <ol class="breadcrumb my-4">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{category.name}}</li>
+          
+            </ol>
+        
         <h1>{{category.name|safe}}</h1>
         <!-- <h2>{{category.intro|safe}}</h2> -->
         <p class="lead">Thank you so much for purchasing our item from themeforest.</p>

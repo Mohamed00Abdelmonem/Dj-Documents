@@ -5,6 +5,7 @@
 
 
 
+
 <!-- New Sidebar Navigation
 ============================ -->
 <div class="new-sidebar">
@@ -25,31 +26,20 @@
     <div class="idocs-content">
       <div class="container"> 
         
+        
         <!-- Getting Started
     ============================ -->
         <section id="idocs_start">
-        
-          <!-- Test Code -->
-          <ul> 
-          {% for category in category_list %}
-          <li class="nav-item">
-            <a class="nav-link active" href="/category/{{category.id}}">
-              {{category.name}}
-            </a>
-            <!-- <a class="btn waves-effect waves-light"  href="{% url 'update_category' category.id %}">  Edit  </a>
-            <a class="btn waves-effect waves-light"  href="{% url 'delete_category' category.id %}">  Delete  </a> -->
-          </li>
-        {% endfor %}
-      </ul>
-
-  </div>
-
-        <br>
-        <br>
-          <!-- End Test Code  -->
 
           
-  
+            <!--Breadcrumb
+    ============================ -->
+          <ol class="breadcrumb my-4">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Topics {{category.name}}</li>
+      
+        </ol>
+
 
         <h1>Documentation</h1>
         <!-- <h2>Your ThemeForest Item Name Here</h2>
